@@ -1,0 +1,43 @@
+# ==============================================================================
+# Tungsten - Custom Detection Rules (Community Spec)
+# ==============================================================================
+# Add or modify your FinOps rules below. 
+# Tungsten automatically hot-reloads this file at startup.
+# 
+# Structure:
+# - id: Unique identifier
+# - title: Name displayed in the HTML and JSON audit reports
+# - icon: Emoji or HTML entity
+# - color: Hex color code for the report visualizer
+# - conditions: Exact column matches in the CUR file (AND logic)
+# - remediation_cmd: The AWS CLI command template to decommission the resource.
+#                    Use {id} to inject the line_item_resource_id.
+
+rules:
+  - id: "ebs_unattached"
+    title: "Unattached EBS Volumes (gp2/gp3)"
+    icon: "&#128190;"
+    color: "#e74c3c"
+    conditions:
+      line_item_usage_type: "EBS:VolumeUsage.gp2"
+      line_item_operation: "CreateVolume-Unattached"
+    remediation_cmd: "aws ec2 delete-volume --volume-id {id}"
+
+  - id: "idle_eip"
+    title: "Idle Elastic IPs"
+    icon: "&#127760;"
+    color: "#e67e22"
+    conditions:
+      line_item_product_code: "AmazonEC2"
+      line_item_usage_type: "ElasticIP:IdleAddress"
+    remediation_cmd: "aws ec2 release-address --allocation-id {id} # Verify allocation ID mapping"
+
+  - id: "old_snapshots"
+    title: "Obsolete EBS Snapshots"
+    icon: "&#128247;"
+    color: "#9b59b6"
+    conditions:
+      line_item_product_code: "AmazonEC2"
+      line_item_usage_type: "EBS:SnapshotUsage"
+      line_item_operation: "OldSnapshot"
+    remediation_cmd: "aws ec2 delete-snapshot --snapshot-id {id}"
