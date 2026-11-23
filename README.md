@@ -16,7 +16,7 @@
 [![Security: Zero Egress](https://img.shields.io/badge/Security-Zero_Network_Egress-2ea44f?style=flat-square)](SECURITY.md)
 [![License: Commercial](https://img.shields.io/badge/License-Commercial_%24999%2Fyr-blueviolet?style=flat-square)](https://www.trytungsten.dev)
 
-[Website](https://www.trytungsten.dev) • [Detection Rules](rules.yaml) • [Security Model](SECURITY.md) • [Report an Issue](https://github.com/trytungsten/tungsten/issues)
+[Website](https://www.trytungsten.dev) • [Detection Rules](rules.yaml) • [Security Model](SECURITY.md) • [Report an Issue](https://github.com/Alessieau/Tungsten/issues)
 
 ---
 
@@ -116,6 +116,6 @@ To purchase an annual commercial license or download the evaluation build, visit
 
 ## 🤝 Community & Support
 
-- **Bug Reports & Feature Requests:** Please open an issue on the [Issue Tracker](https://github.com/trytungsten/tungsten/issues).
+- **Bug Reports & Feature Requests:** Please open an issue on the [Issue Tracker](https://github.com/Alessieau/Tungsten/issues).
 - **Custom Rules Submission:** Have an idea for a custom CUR leak detection rule? Submit a PR adding it to `rules.yaml`.
-- **Direct Founder Contact:** Contact `alessio@trytungsten.dev` for enterprise licensing inquiries.
+- **Direct Founder Contact:** Reach out via [https://www.trytungsten.dev](https://www.trytungsten.dev) for enterprise licensing inquiries.

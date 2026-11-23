@@ -40,5 +40,4 @@ Tungsten **never** automatically executes destructive cloud commands against you
 
 ## 4. Reporting Security Vulnerabilities
 
-If you discover any security consideration or anomaly, please report it directly to:
-**security@trytungsten.dev** (or open an issue in this repository).
+If you discover any security consideration or anomaly, please report it directly by opening an issue or a GitHub Security Advisory in this repository.
